@@ -6,6 +6,14 @@ import (
 
 //  go run .\tutorial.go from terminal
 
+// go is not oo language but you can define methods on types and structs
+// go is complied (can build an executable) and statically typed language
+
+// function with parameters
+func familyName(fname string, age int) {
+	fmt.Println("Hello", age, "year old", fname, "Refsnes")
+}
+
 // main function
 func main() {
 
@@ -64,5 +72,27 @@ func main() {
 	} else {
 		fmt.Println("Good evening.")
 	}
+
+	// you can only use for loops in Go!
+	for i := 0; i < 5; i++ {
+		if i == 3 {
+			break
+		}
+		fmt.Println(i)
+	}
+
+	// for arrays and slices you can use range
+	fruits := [3]string{"apple", "orange", "banana"}
+	for idx, val := range fruits {
+		fmt.Printf("%v\t%v\n", idx, val)
+	}
+
+	familyName("Liam", 3)
+	familyName("Jenny", 14)
+	familyName("Anja", 30)
+
+	// maps are key value pairs like dict in python
+	myMap := map[string]int{"apple": 5, "banana": 10, "orange": 15}
+	fmt.Println(myMap)
 
 }
